@@ -16,8 +16,8 @@ These missing values reduce forecast accuracy. Simple fixes like forward fill or
 ### The Expectation-Maximization Approach
 Expectation-Maximization is an iterative algorithm. It starts with an initial guess for missing values (e.g., the mean). Then:
 
-1.  [**E-step**: Estimate missing values using the current parameters (mean, variance).]
-2.  [**M-step**: Recalculate parameters using the full data (observed + estimated).]
+1.  [E-step: Estimate missing values using the current parameters (mean, variance).]
+2.  [M-step: Recalculate parameters using the full data (observed + estimated).]
 3.  [Repeat until the estimates stabilize.]
 
 This process converges on the most likely set of values under a Gaussian assumption.
@@ -35,9 +35,9 @@ The EM estimates track the original trend and fill gaps realistically. They do n
 ### Use Cases in Agricultural Economics
 This method extends well beyond crop yields:
 
-- **Soil and moisture sensors**: Fill in weather-related data gaps.
-- **Market price series**: Address missing entries due to lags or blackouts.
-- **Livestock health records**: Estimate weight and growth values over time.
+- Soil and moisture sensors: Fill in weather-related data gaps.
+- Market price series: Address missing entries due to lags or blackouts.
+- Livestock health records: Estimate weight and growth values over time.
 
 Any repeated measurement process with structure and missing values can benefit.
 

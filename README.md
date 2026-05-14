@@ -1,7 +1,7 @@
 # Maximum Likelihood Imputation for Missing Time Series in Agricultural Economics
 
-**Published:** 2025-07-15
-**Medium:** [https://medium.com/@kyle-t-jones/maximum-likelihood-imputation-for-missing-time-series-in-agricultural-economics-bca8cf727185](https://medium.com/@kyle-t-jones/maximum-likelihood-imputation-for-missing-time-series-in-agricultural-economics-bca8cf727185)
+Published: 2025-07-15
+Medium: [https://medium.com/@kyle-t-jones/maximum-likelihood-imputation-for-missing-time-series-in-agricultural-economics-bca8cf727185](https://medium.com/@kyle-t-jones/maximum-likelihood-imputation-for-missing-time-series-in-agricultural-economics-bca8cf727185)
 
 ## About
 
