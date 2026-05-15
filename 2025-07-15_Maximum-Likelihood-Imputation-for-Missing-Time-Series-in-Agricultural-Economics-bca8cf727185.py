@@ -5,8 +5,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
 np.random.seed(42)
+
 
 # Simulate 20 years of wheat yield data with a trend and noise
 years = np.arange(2000, 2020)
