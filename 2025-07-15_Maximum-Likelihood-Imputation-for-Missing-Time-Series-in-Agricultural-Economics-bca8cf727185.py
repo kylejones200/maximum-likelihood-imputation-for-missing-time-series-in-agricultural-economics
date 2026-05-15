@@ -29,8 +29,8 @@ def expectation_maximization(data, max_iter=100, tol=1e-6):
     filled[np.isnan(data)] = np.nanmean(data)
     for _ in range(max_iter):
         mu = np.mean(filled)
-        sigma = np.std(filled)
-        old = filled.copy()
+        np.std(filled)
+        filled.copy()
         # E-step: replace missing with current expected mean
         filled[np.isnan(data)] = mu
         # M-step: new mean and std from filled data
