@@ -1,3 +1,7 @@
+# Generated artifacts
+outputs/*
+!outputs/README.md
+
 # Python
 __pycache__/
 *.pyc

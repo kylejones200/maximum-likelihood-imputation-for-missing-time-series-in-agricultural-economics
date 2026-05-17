@@ -1,0 +1,21 @@
+input:
+  yields_csv: inputs/wheat_yields.csv
+
+output:
+  dir: outputs
+  figures_dir: figures
+  results_csv: imputed_yields.csv
+  metrics_json: metrics.json
+  figure_name: crop_yield_estimation.png
+  figure_dpi: 300
+
+model:
+  max_iter: 100
+  tol: 1.0e-6
+
+validation:
+  enabled: true
+  truth_csv: inputs/wheat_yields_truth.csv
+
+run:
+  show_plots: false

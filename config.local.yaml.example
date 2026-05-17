@@ -1,0 +1,8 @@
+# Copy to config.local.yaml and merge paths or flags for local runs.
+# Not loaded automatically; pass via: uv run python main.py --config config.local.yaml
+
+run:
+  show_plots: true
+
+validation:
+  enabled: true
