@@ -5,6 +5,7 @@ description = "EM imputation for missing agricultural time series (wheat yields 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pydantic>=2.10.0",
     "matplotlib>=3.10.9",
     "numpy>=2.4.4",
     "pandas>=3.0.3",

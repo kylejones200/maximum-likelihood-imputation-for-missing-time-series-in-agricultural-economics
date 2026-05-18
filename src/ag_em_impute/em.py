@@ -23,7 +23,6 @@ class EMResult:
 def expectation_maximization(data: np.ndarray, max_iter: int = 100, tol: float = 1e-6) -> EMResult:
     """
     Fill missing values via EM under i.i.d. N(mu, sigma^2).
-
     E-step: missing <- mu. M-step: mu, sigma^2 from the completed sample.
     """
     if max_iter < 1:
@@ -33,7 +32,6 @@ def expectation_maximization(data: np.ndarray, max_iter: int = 100, tol: float =
 
     values = validate_yield_array(data)
     missing = np.isnan(values)
-
     if not missing.any():
         mu = float(np.mean(values))
         sigma = float(np.std(values, ddof=1)) if values.size > 1 else 0.0
@@ -47,11 +45,9 @@ def expectation_maximization(data: np.ndarray, max_iter: int = 100, tol: float =
 
     filled = values.copy()
     filled[missing] = float(np.nanmean(values))
-
     mu_prev = np.nan
     sigma_prev = np.nan
     n_iter = 0
-
     for n_iter in range(1, max_iter + 1):
         mu = float(np.mean(filled))
         if filled.size > 1:
@@ -60,7 +56,6 @@ def expectation_maximization(data: np.ndarray, max_iter: int = 100, tol: float =
             sigma = 0.0
 
         filled[missing] = mu
-
         if n_iter > 1 and abs(mu - mu_prev) < tol and abs(sigma - sigma_prev) < tol:
             return EMResult(
                 imputed=filled,

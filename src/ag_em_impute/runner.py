@@ -40,13 +40,11 @@ def run(
     yields_path = _resolve_path(config["input"]["yields_csv"], input_path)
     out_root = _resolve_path(config["output"]["dir"], output_dir)
     figures_dir = out_root / config["output"]["figures_dir"]
-
     do_validate = (
         validate if validate is not None else config.get("validation", {}).get("enabled", False)
     )
     truth_path_cfg = config.get("validation", {}).get("truth_csv")
     truth_path = _resolve_path(truth_path_cfg, None) if truth_path_cfg else None
-
     data = load_yields(yields_path)
     yields = data["Yield"].to_numpy(dtype=float)
     em_result = expectation_maximization(
@@ -54,10 +52,8 @@ def run(
         max_iter=config["model"]["max_iter"],
         tol=config["model"]["tol"],
     )
-
     data["Estimated_Yield"] = em_result.imputed
     data["Was_Missing"] = data["Yield"].isna()
-
     save_results(data, out_root / config["output"]["results_csv"])
     logger.info(
         "EM: mu=%.4f sigma=%.4f iterations=%d converged=%s",
@@ -66,7 +62,6 @@ def run(
         em_result.n_iter,
         em_result.converged,
     )
-
     true_series = None
     if do_validate:
         if truth_path is None or not truth_path.exists():

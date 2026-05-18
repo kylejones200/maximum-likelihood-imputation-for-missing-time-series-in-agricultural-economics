@@ -38,7 +38,6 @@ def main() -> None:
         help="Display the plot interactively",
     )
     args = parser.parse_args()
-
     validate = None
     if args.validate:
         validate = True

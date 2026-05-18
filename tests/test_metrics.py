@@ -62,13 +62,10 @@ def test_wheat_validation_metrics(tmp_path):
     config_path = tmp_path / "cfg.yaml"
     config_path.write_text(yaml.dump(config))
     run(config_path, validate=True)
-
     report = json.loads((tmp_path / "metrics.json").read_text())
     assert report["n_missing"] == 5
     assert report["em"]["converged"] is True
     # EM ties mean (global level); trend-aware baselines win on this series.
-    assert report["em"]["rmse"] == pytest.approx(
-        report["baselines"]["mean"]["rmse"], rel=1e-9
-    )
+    assert report["em"]["rmse"] == pytest.approx(report["baselines"]["mean"]["rmse"], rel=1e-9)
     assert report["best_rmse"] in {"forward_fill", "linear_interp"}
     assert report["baselines"]["forward_fill"]["rmse"] < report["em"]["rmse"]

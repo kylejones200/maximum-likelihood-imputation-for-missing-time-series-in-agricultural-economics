@@ -56,10 +56,8 @@ def build_metrics_report(
 ) -> dict[str, Any]:
     missing_mask = np.isnan(yields)
     em_result, baselines = run_all_imputations(yields, max_iter=max_iter, tol=tol)
-
     predictions = {"em": em_result.imputed, **baselines}
     scores = evaluate_missing(predictions, true, missing_mask)
-
     return {
         "n_missing": int(missing_mask.sum()),
         "n_observed": int((~missing_mask).sum()),

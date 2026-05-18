@@ -20,10 +20,8 @@ def generate_wheat_yields(
     yields_with_missing = true_yields.copy()
     missing_idx = np.random.choice(len(years), size=n_missing, replace=False)
     yields_with_missing[missing_idx] = np.nan
-
     output_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame({"Year": years, "Yield": yields_with_missing}).to_csv(output_path, index=False)
-
     if truth_path is not None:
         truth_path.parent.mkdir(parents=True, exist_ok=True)
         pd.DataFrame({"Year": years, "True_Yield": true_yields}).to_csv(truth_path, index=False)

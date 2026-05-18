@@ -14,7 +14,6 @@ def plot_yield_imputation(
 ) -> None:
     missing = data["Yield"].isna()
     observed = ~missing
-
     fig, ax = plt.subplots()
     if observed.any():
         ax.plot(
@@ -58,13 +57,11 @@ def plot_yield_imputation(
         fontsize=12,
     )
     ax.legend()
-
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.spines["left"].set_position(("outward", 5))
     ax.spines["bottom"].set_position(("outward", 5))
     ax.tick_params(axis="both", direction="out")
-
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_path, dpi=dpi)
