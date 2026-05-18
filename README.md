@@ -5,6 +5,14 @@ Companion code for [`article.md`](article.md).
 Published: 2025-07-15  
 Medium: [Maximum Likelihood Imputation for Missing Time Series in Agricultural Economics](https://medium.com/@kyle-t-jones/maximum-likelihood-imputation-for-missing-time-series-in-agricultural-economics-bca8cf727185)
 
+## Business context
+
+Agricultural time series often include missing values. Yield reports come late. Rainfall sensors fail. Market prices go unrecorded. These gaps distort models and bias forecasts. Expectation-Maximization (EM) offers a structured way to estimate missing values.
+
+This article shows how to use EM to fill missing values in a synthetic dataset of crop yields. It recreates the common scenario where only partial data is available and tests how well we can recover the underlying trend.
+
+Annual crop yields may be missing for several regions. Rainfall and temperature records often have gaps due to sensor outages. Market prices can be missing for holidays, weekends, or due to reporting errors.
+
 ## Method
 
 Univariate **Gaussian EM** for i.i.d. \(N(\mu, \sigma^2)\) observations with missing values:
